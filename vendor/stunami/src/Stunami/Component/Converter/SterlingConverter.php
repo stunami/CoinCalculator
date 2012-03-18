@@ -3,8 +3,12 @@
 namespace Stunami\Component\Converter;
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * This file is part of the Stunami CoinCalculator.
+ *
+ * (c) Stuart Lowes <stuart.lowes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 /**
@@ -16,18 +20,6 @@ class SterlingConverter implements ConverterInterface
     {
         preg_match('/^([\xa3])?(\d+\.?\d*)(p)?$/u', $amountString, $units);
 
-        /*
-          [0]=>
-          string(1) "4"
-          [1]=>
-          string(0) "" <- £
-          [2]=>
-          string(1) "4"
-          [3]=>
-          string(0) ""
-          [4]=>
-          string(0) ""
-         */
         if (empty($units))
         {
             return null;

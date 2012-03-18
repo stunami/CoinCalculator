@@ -2,6 +2,15 @@
 
 namespace Stunami\CoinCalculatorBundle\Tests\Unit\Entity;
 
+/*
+ * This file is part of StunamiCoinCalculatorBundle.
+ *
+ * (c) Stuart Lowes <stuart.lowes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Stunami\CoinCalculatorBundle\Entity\CoinAmount;
 
 use Symfony\Component\Validator\ValidatorFactory;

@@ -3,13 +3,16 @@
 namespace Stunami\Component\Converter;
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * This file is part of the Stunami CoinCalculator.
+ *
+ * (c) Stuart Lowes <stuart.lowes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 /**
- *
- * @author stuart
+ * Converter Interface responsbile for Converter string to subunit (pence, cents etc)
  */
 interface ConverterInterface
 {

@@ -2,18 +2,20 @@
 
 namespace Stunami\Component\Validator\Constraints;
 
+/*
+ * This file is part of the Stunami CoinCalculator.
+ *
+ * (c) Stuart Lowes <stuart.lowes@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of SterlingValidator
- *
- * @author stuart
+ * SterlingValidator - Validates a valid sterling string amount
  */
 class SterlingValidator extends ConstraintValidator
 {
