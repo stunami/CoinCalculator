@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="stunami_coin_calculator.calculator.class">Stunami\Component\Calculator\Calculator</parameter>
+        <parameter key="stunami_coin_calculator.denomination.class">Stunami\Component\Denomination\SterlingDenomination</parameter>
+        <parameter key="stunami_coin_calculator.solver.class">Stunami\Component\Solver\GreedySolver</parameter>
+        <parameter key="stunami_coin_calculator.converter.class">Stunami\Component\Converter\SterlingConverter</parameter>
+    </parameters>
+
+    <services>
+        <service id="stunami_coin_calculator.calculator" class="%stunami_coin_calculator.calculator.class%">
+            <argument type="service" id="stunami_coin_calculator.denomination" />
+            <argument type="service" id="stunami_coin_calculator.solver" />
+        </service>
+        <service id="stunami_coin_calculator.denomination" class="%stunami_coin_calculator.denomination.class%">
+        </service>
+
+        <service id="stunami_coin_calculator.solver" class="%stunami_coin_calculator.solver.class%">
+        </service>
+
+        <service id="stunami_coin_calculator.converter" class="%stunami_coin_calculator.converter.class%">
+        </service>
+    </services>
+</container>

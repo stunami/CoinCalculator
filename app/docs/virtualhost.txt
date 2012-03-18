@@ -1,0 +1,11 @@
+ <VirtualHost *>
+     ServerName     localhost.dev
+     DirectoryIndex app.php
+     DocumentRoot "/Users/stuart/www/sites/CodeCalculator/web"
+
+     <Directory "/Users/stuart/www/sites/CodeCalculator/web">
+         AllowOverride None
+         Order allow,deny
+         Allow from All
+    </Directory>
+ </VirtualHost>

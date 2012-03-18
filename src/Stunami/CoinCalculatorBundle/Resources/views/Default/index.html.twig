@@ -1,0 +1,31 @@
+{% extends "StunamiCoinCalculatorBundle::layout.html.twig" %}
+{% macro coin_format(coin) %}
+{% spaceless %}
+    {% if (coin > 99) %}
+        £{{ coin/100 }}
+    {% else %}
+        {{ coin }}p
+    {% endif %}
+{% endspaceless %}
+{% endmacro %}
+{% block title "Coin Calculator" %}
+
+{% block content %}
+<h1>Coin Calculator</h1>
+<p>Enter the amount below:</p>
+
+<form action="{{ path('coin_calculator') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" value="Enter" />
+</form>
+<p>
+You entered: {{form.vars.value.amount}}
+</p>
+<ul>
+{% for coin, amount in coins %}
+{% if amount > 0 %}
+    <li>{{ _self.coin_format(coin) }} x {{amount}}</li>
+{% endif %}
+{%endfor %}
+<ul>
+{% endblock %}
