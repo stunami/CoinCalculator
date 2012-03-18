@@ -4,3 +4,4 @@ vendor/*
 */cache/*
 web/uploads/*
 web/bundles/*
+docs/reports/*

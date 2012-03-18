@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<docblox>
+  <parser>
+    <target>docs/reports/api</target>
+  </parser>
+  <transformer>
+    <target>docs/reports/api</target>
+  </transformer>
+  <files>
+    <directory>src/Stunami</directory>
+    <directory>vendor/stunami/src</directory>
+  </files>
+</docblox>
