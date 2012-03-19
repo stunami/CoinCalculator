@@ -31,7 +31,14 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        // We could use Mocks here but you would end up implementing a lot of the classes
+        $iterator = new \ArrayIterator(array(200, 100, 50, 20, 10, 5, 2, 1));
+        $denonination = $this->getMock('Stunami\Component\Denomination\DenominationInterface');
+        $denonination->expects($this->any())->method('getIterator')->will($this->returnValue($iterator));
+
+        $solution =  array(1 => 1, 2 => 1, 5 => 1, 10 => 0, 20 => 1, 50 => 0, 100 => 0, 200 => 0);
+        $solver = $this->getMock('Stunami\Component\Solver\SolverInterface');
+        $solver->expects($this->any())->method('solve')->will($this->returnValue($solution));
+
         $this->object = new Calculator(new SterlingDenomination(), new GreedySolver());
     }
 
@@ -43,8 +50,6 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
     public function calculateProvider()
     {
         return array(
-            array(123, array(1 => 1, 2 => 1, 5 => 0, 10 => 0, 20 => 1, 50 => 0, 100 => 1, 200 => 0)),
-            array(23, array(1 => 1, 2 => 1, 5 => 0, 10 => 0, 20 => 1, 50 => 0, 100 => 0, 200 => 0)),
             array(28, array(1 => 1, 2 => 1, 5 => 1, 10 => 0, 20 => 1, 50 => 0, 100 => 0, 200 => 0)),
         );
     }
