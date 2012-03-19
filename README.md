@@ -54,6 +54,7 @@ This is found in vendors/stunami/CodeCalculator
 * Stunami\Component\Solver\GreedySolver - Simple Solver good enough for Sterling. This could be replaced by a more advanced solver algorithms that might be required for other currencies.
 * Stunami\Component\Denomination\SterlingDenomination - Contains Sterling coins. This could be replaced by a different curreny.
 * Stunami\Tests - contain Unit tests for library
+
 To run the tests in vendors/stunami run:
 
     phpunit
